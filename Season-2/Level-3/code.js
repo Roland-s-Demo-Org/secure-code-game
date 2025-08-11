@@ -10,6 +10,7 @@
 // 6. Compare your solution with solution.js
 
 const express = require("express");
+const helmet = require("helmet");
 const bodyParser = require("body-parser");
 const libxmljs = require("libxmljs");
 const multer = require("multer");
@@ -17,6 +18,7 @@ const path = require("path");
 const fs = require("fs");
 const { exec } = require("node:child_process");
 const app = express();
+app.use(helmet());
 
 app.use(bodyParser.json());
 app.use(bodyParser.text({ type: "application/xml" }));
