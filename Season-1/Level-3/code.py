@@ -48,6 +48,9 @@ class TaxPayer:
         if not path:
             raise Exception("Error: Tax form is required for all users")
 
+        if '..' in path:
+            raise Exception('Invalid file path')
+
         with open(path, 'rb') as form:
             tax_data = bytearray(form.read())
 
