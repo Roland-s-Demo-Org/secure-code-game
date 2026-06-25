@@ -5,8 +5,10 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const libxmljs = require("libxmljs");
 const multer = require("multer");
+const helmet = require("helmet");
 const app = express();
 
+app.use(helmet());
 app.use(bodyParser.json());
 app.use(bodyParser.text({ type: "application/xml" }));
 

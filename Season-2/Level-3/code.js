@@ -16,8 +16,10 @@ const multer = require("multer");
 const path = require("path");
 const fs = require("fs");
 const { exec } = require("node:child_process");
+const helmet = require("helmet");
 const app = express();
 
+app.use(helmet());
 app.use(bodyParser.json());
 app.use(bodyParser.text({ type: "application/xml" }));
 
